@@ -1,0 +1,10 @@
+is_global = true
+build_property.TargetFramework = net5.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DistSysAcwClient
+build_property.ProjectDir = D:\Box Sync\Lecturing\0-Modules\DistributedSystems\2223\ACW\2223\DistSysAcw\DistSysAcwClient\
