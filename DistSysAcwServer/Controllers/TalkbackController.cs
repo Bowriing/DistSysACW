@@ -18,7 +18,7 @@ namespace DistSysAcwServer.Controllers
         #endregion
         [HttpGet("hello")]
         
-        public IActionResult<string> HelloResponse()
+        public IActionResult HelloResponse()
         {
             return Ok("Hello World");
         }
@@ -31,7 +31,7 @@ namespace DistSysAcwServer.Controllers
         //       conform to the error handling requirements in the spec
         #endregion
         [HttpGet("sort")]
-        public IActionResult<int[]> SortFunction([FromQuery] int[] integers)
+        public IActionResult SortFunction([FromQuery] int[] integers)
         {
             var sortedIntegers = integers.OrderBy(i => i).ToArray();
 

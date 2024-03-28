@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github\\workflows",
     "\\DistSysAcwClient",
     "\\DistSysAcwServer",
     "\\DistSysAcwServer\\Controllers"
   ],
-  "SelectedNode": "\\DistSysAcwServer\\Controllers\\TalkbackController.cs",
+  "SelectedNode": "\\DistSysAcw.sln",
   "PreviewInSolutionExplorer": false
 }
