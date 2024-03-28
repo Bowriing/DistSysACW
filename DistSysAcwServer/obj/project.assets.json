@@ -2013,24 +2013,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\461462\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\bowri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\461462\\OneDrive - hull.ac.uk\\_BoxData\\Lecturing\\0-Modules\\DistributedSystems\\2324\\ACW\\2223\\DistSysAcw\\DistSysAcwServer\\DistSysAcwServer.csproj",
+      "projectUniqueName": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\DistSysAcwServer.csproj",
       "projectName": "DistSysAcwServer",
-      "projectPath": "C:\\Users\\461462\\OneDrive - hull.ac.uk\\_BoxData\\Lecturing\\0-Modules\\DistributedSystems\\2324\\ACW\\2223\\DistSysAcw\\DistSysAcwServer\\DistSysAcwServer.csproj",
-      "packagesPath": "C:\\Users\\461462\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\461462\\OneDrive - hull.ac.uk\\_BoxData\\Lecturing\\0-Modules\\DistributedSystems\\2324\\ACW\\2223\\DistSysAcw\\DistSysAcwServer\\obj\\",
+      "projectPath": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\DistSysAcwServer.csproj",
+      "packagesPath": "C:\\Users\\bowri\\.nuget\\packages\\",
+      "outputPath": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\461462\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\bowri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2038,7 +2033,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2051,6 +2045,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2091,7 +2090,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
