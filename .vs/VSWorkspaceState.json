@@ -3,7 +3,8 @@
     "",
     "\\DistSysAcwClient",
     "\\DistSysAcwServer",
-    "\\DistSysAcwServer\\Controllers"
+    "\\DistSysAcwServer\\Controllers",
+    "\\DistSysAcwServer\\Models"
   ],
   "SelectedNode": "\\DistSysAcw.sln",
   "PreviewInSolutionExplorer": false
