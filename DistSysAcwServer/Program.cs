@@ -1,3 +1,4 @@
+using DistSysAcwServer.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using System.Reflection;
@@ -12,6 +13,7 @@ builder.Services.AddControllers(options =>
 });
 builder.Services.AddDbContext<DistSysAcwServer.Models.UserContext>();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<UserDbAccess>();
 
 builder.Services.AddAuthentication(options =>
 {

@@ -17,7 +17,7 @@ namespace DistSysAcwServer.Models
         #endregion
         public User() { }
 
-        public enum UserRole {  admin, user }
+        public enum UserRole {  admin = 0, user = 1} // number corresponds to the role type
 
         [Key]
         public string ApiKey { get; set; }

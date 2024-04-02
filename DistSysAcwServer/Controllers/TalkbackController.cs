@@ -39,7 +39,7 @@ namespace DistSysAcwServer.Controllers
 
             var sortedIntegers = integers.OrderBy(i => i).ToArray();
 
-            return Ok(sortedIntegers);
+            return Ok (sortedIntegers);
         }
     }
 }
