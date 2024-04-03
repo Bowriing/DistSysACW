@@ -1,9 +1,11 @@
 
+using System.Linq;
+
 namespace DistSysAcwServer.Models
 {
     public class UserDbAccess
     {
-        //THIS VARIABLE IS THE DATABASE ITN JUST HAS A WEIRD NAME
+        //THIS VARIABLE IS THE DATABASE IT JUST HAS A WEIRD NAME
         private readonly UserContext _userContext;
 
         public UserDbAccess(UserContext pContext)
@@ -28,6 +30,17 @@ namespace DistSysAcwServer.Models
         {
             return _userContext.Users.FirstOrDefault(user => user.ApiKey == pApiKey);
         }
+
+        public bool AnyUserExists()
+        {
+            return _userContext.Users.Any();
+        }
+
+        public bool UserUsernameExists(string pUsername)
+        {
+            return _userContext.Users.Any(user => user.UserName == pUsername);
+        }
+    
 
         public bool ApiKeyUsernameExists(string pApikey, string pUsername)
         {
