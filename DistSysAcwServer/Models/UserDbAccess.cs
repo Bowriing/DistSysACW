@@ -47,17 +47,36 @@ namespace DistSysAcwServer.Models
             return _userContext.Users.Any(user => user.ApiKey == pApikey && user.UserName == pUsername);
         }
 
-        public bool DeleteUserApiKey(string pApikey)
+        public bool DeleteUser(string pApikey, string pUsername)
         {
+            //create user object using method
             User user = ApiKeyUserExistsUser(pApikey);
-            if(user != null)
+
+            if(user == null)
             {
-                _userContext.Users.Remove(user);
-                _userContext.SaveChanges();
-                return true;
+                return false;
             }
 
-            return false;
+            //check parameter username exists/ is valid
+            bool matchUser = UserUsernameExists(pUsername);
+
+            //if no user is found
+            if (!matchUser)
+            {
+                return false;
+            }
+
+            //if theyre not equal
+            if (user.UserName != pUsername)
+            {
+                return false;
+            }
+
+            //remove user object from table
+            _userContext.Users.Remove(user);
+            _userContext.SaveChanges();
+
+            return true;
         }
     }
 }

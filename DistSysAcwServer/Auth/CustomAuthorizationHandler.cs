@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DistSysAcwServer.Auth
 {
@@ -39,10 +40,15 @@ namespace DistSysAcwServer.Auth
                         return Task.CompletedTask;
                     }
                 }
-            }
-            
-            context.Fail();
 
+                var httpContext = context.Resource as HttpContext;
+                httpContext.Response.StatusCode = StatusCodes.Status403Forbidden;
+                httpContext.Response.ContentType = "text/plain";
+                string message = "Forbidden. Admin access only.";
+                httpContext.Response.WriteAsync(message);
+            }
+
+            context.Fail();
             return Task.CompletedTask;
         }
     }

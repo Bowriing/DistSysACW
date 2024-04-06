@@ -31,7 +31,7 @@ namespace DistSysAcwServer.Auth
             HttpContextAccessor = httpContextAccessor;
         }
 
-        protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
+        protected async override Task<AuthenticateResult> HandleAuthenticateAsync()
         {
             #region Task5
             // TODO:  Find if a header ‘ApiKey’ exists, and if it does, check the database to determine if the given API Key is valid
@@ -45,7 +45,7 @@ namespace DistSysAcwServer.Auth
             //check if the request has the matching apikey as a header
             if (!Request.Headers.TryGetValue("ApiKey", out var apiKeyHeader))
             {
-                return await Task.FromResult(AuthenticateResult.Fail("Not Authenticated"));
+                return AuthenticateResult.Fail("Not Authenticated");
             }
 
             apiKey = apiKeyHeader;
@@ -53,7 +53,7 @@ namespace DistSysAcwServer.Auth
             //if a user based off the given apikey does not exist
             if (!_userDbAccess.ApiKeyUserExists(apiKey))
             {
-                return await Task.FromResult(AuthenticateResult.Fail("Unauthorized. Check ApiKey in Header is correct."));
+                return  AuthenticateResult.Fail("Unauthorized. Check ApiKey in Header is correct.");
             }
 
             User verifiedUser = _userDbAccess.ApiKeyUserExistsUser(apiKey);
@@ -70,7 +70,7 @@ namespace DistSysAcwServer.Auth
 
             var authenticationTicket = new AuthenticationTicket(principal, this.Scheme.Name);
 
-            return await Task.FromResult(AuthenticateResult.Success(authenticationTicket));
+            return AuthenticateResult.Success(authenticationTicket);
         }
 
         protected override async Task HandleChallengeAsync(AuthenticationProperties properties)

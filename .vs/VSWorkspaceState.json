@@ -3,6 +3,7 @@
     "",
     "\\DistSysAcwClient",
     "\\DistSysAcwServer",
+    "\\DistSysAcwServer\\Auth",
     "\\DistSysAcwServer\\Controllers",
     "\\DistSysAcwServer\\Models"
   ],

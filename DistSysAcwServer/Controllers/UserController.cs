@@ -19,7 +19,6 @@ namespace DistSysAcwServer.Controllers
 
         //  api/user/new
         [HttpPost("New")]
-        [Authorize(Roles = "Admin, User")]
         public IActionResult CreateUser([FromBody]string pUsername)
         {
             //check if any data for username given from body
@@ -57,6 +56,7 @@ namespace DistSysAcwServer.Controllers
 
         //api/user/New?username=" "
         [HttpGet("New")]
+        [Authorize(Roles = "admin")]
         public IActionResult CreateUserGET(string username)
         {
             if(username == null)
@@ -93,10 +93,12 @@ namespace DistSysAcwServer.Controllers
             return _userDbAccess.ApiKeyUsernameExists(apiKey,username);
         }
 
-        [HttpGet("DeleteUserByApiKey/{apiKey}")]
-        public bool DeleteUserApiKey(string apiKey)
+        //Task 7 - Remove User DELETE Request
+        [HttpDelete("removeUser")]
+        [Authorize(Roles = "admin,user")]
+        public IActionResult RemoveUser([FromHeader]string ApiKey, [FromQuery]string username)
         {
-            return _userDbAccess.DeleteUserApiKey(apiKey);
+            return Ok(_userDbAccess.DeleteUser(ApiKey, username));
         }
     }
 }
