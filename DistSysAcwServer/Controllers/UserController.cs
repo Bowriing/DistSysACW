@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.Json.Nodes;
 using DistSysAcwServer.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -94,11 +95,56 @@ namespace DistSysAcwServer.Controllers
         }
 
         //Task 7 - Remove User DELETE Request
-        [HttpDelete("removeUser")]
+        [HttpDelete("RemoveUser")]
         [Authorize(Roles = "admin,user")]
         public IActionResult RemoveUser([FromHeader]string ApiKey, [FromQuery]string username)
         {
             return Ok(_userDbAccess.DeleteUser(ApiKey, username));
+        }
+
+        //Task 8 - Change Role 
+        [HttpPut("changerole")]
+        [Authorize(Roles = "admin")]
+        public IActionResult ChangeUser([FromBody]JsonObject jsonData)
+        {
+            //set variables from json object
+            string username = jsonData["username"]?.ToString();
+            string role = jsonData["role"]?.ToString();
+
+            //if username does not exist
+            bool validUser = _userDbAccess.UserUsernameExists(username);
+            if (!validUser)
+            {
+                return BadRequest("NOT DONE: Username does not exist");
+            }
+
+            //if role is not admin or user
+            bool validRoleMethod()
+            {
+                if (role != "admin" && role != "user")
+                {
+                    return false;
+                }
+                return true;
+            }
+            bool validRole = validRoleMethod();
+            if (!validRole)
+            {
+                return BadRequest( role + "NOT DONE: Role does not exist");
+            }
+
+            //if both checks are valid
+            if(validUser && validRole)
+            {
+                _userDbAccess.ChangeUserRole(username, role);
+                return Ok("DONE");
+            }
+
+            //else any other mess up
+            return BadRequest("NOT DONE: An error occured");
+
+
+
         }
     }
 }

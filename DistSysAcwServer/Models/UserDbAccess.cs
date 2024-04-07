@@ -40,7 +40,11 @@ namespace DistSysAcwServer.Models
         {
             return _userContext.Users.Any(user => user.UserName == pUsername);
         }
-    
+        
+        public User GetUserByUsername(string username)
+        {
+            return _userContext.Users.First(user => user.UserName == username);
+        }
 
         public bool ApiKeyUsernameExists(string pApikey, string pUsername)
         {
@@ -77,6 +81,22 @@ namespace DistSysAcwServer.Models
             _userContext.SaveChanges();
 
             return true;
+        }
+
+        public void ChangeUserRole(string username, string role)
+        {
+            //create object of user based off passed username
+            User currentUser = GetUserByUsername(username);
+
+            //parse role into enum to be able to update field in table
+            var userRole = Enum.Parse<User.UserRole>(role);
+
+            //set role to current user selected
+            currentUser.Role = userRole;
+
+            //update field and save
+            _userContext.Users.Update(currentUser);
+            _userContext.SaveChanges();
         }
     }
 }

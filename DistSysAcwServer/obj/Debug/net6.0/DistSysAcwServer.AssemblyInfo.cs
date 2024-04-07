@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DistSysAcwServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d012b7767b38a48ee1d5bcb29e91fb1a57a68da2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e6dd0be0834d35f21f0e7f913014cf1abc8fb5b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DistSysAcwServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DistSysAcwServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
