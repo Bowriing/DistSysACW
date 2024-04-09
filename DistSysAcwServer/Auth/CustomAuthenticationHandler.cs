@@ -56,7 +56,7 @@ namespace DistSysAcwServer.Auth
                 return  AuthenticateResult.Fail("Unauthorized. Check ApiKey in Header is correct.");
             }
 
-            User verifiedUser = _userDbAccess.ApiKeyUserExistsUser(apiKey);
+            User verifiedUser = _userDbAccess.GetUserByApiKey(apiKey);
 
             Claim[] claimsArray = new Claim[]
             {

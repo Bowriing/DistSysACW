@@ -31,7 +31,7 @@ namespace DistSysAcwServer.Controllers
             //check if the username exists in the database
             else if (_userDbAccess.UserUsernameExists(pUsername))
             {
-                return Forbid("Oops. This username is already in use. Please try again with a new username.");
+                return StatusCode(403, "Oops. This username is already in use. Please try again with a new username.");
             }
 
             string username = pUsername;
@@ -57,7 +57,6 @@ namespace DistSysAcwServer.Controllers
 
         //api/user/New?username=" "
         [HttpGet("New")]
-        [Authorize(Roles = "admin")]
         public IActionResult CreateUserGET(string username)
         {
             if(username == null)
@@ -85,7 +84,7 @@ namespace DistSysAcwServer.Controllers
         [HttpGet("CheckApiKeyExistUser/{apiKey}")]
         public User CheckApiKeyUserExistUserReturn(string apiKey)
         {
-            return _userDbAccess.ApiKeyUserExistsUser(apiKey);
+            return _userDbAccess.GetUserByApiKey(apiKey);
         }
 
         [HttpGet("CheckApiKeyUsernameExist/{apiKey}/{username}")]
@@ -142,9 +141,6 @@ namespace DistSysAcwServer.Controllers
 
             //else any other mess up
             return BadRequest("NOT DONE: An error occured");
-
-
-
         }
     }
 }

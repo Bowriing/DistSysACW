@@ -26,7 +26,7 @@ namespace DistSysAcwServer.Models
             return _userContext.Users.Any(user => user.ApiKey == pApiKey);
         }
         
-        public User ApiKeyUserExistsUser(string pApiKey)
+        public User GetUserByApiKey(string pApiKey)
         {
             return _userContext.Users.FirstOrDefault(user => user.ApiKey == pApiKey);
         }
@@ -54,7 +54,7 @@ namespace DistSysAcwServer.Models
         public bool DeleteUser(string pApikey, string pUsername)
         {
             //create user object using method
-            User user = ApiKeyUserExistsUser(pApikey);
+            User user = GetUserByApiKey(pApikey);
 
             if(user == null)
             {

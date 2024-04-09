@@ -4,3 +4,15 @@ D:\Repos\DistSysACW\DistSysAcwClient\obj\Debug\net6.0\DistSysAcwClient.AssemblyI
 D:\Repos\DistSysACW\DistSysAcwClient\obj\Debug\net6.0\DistSysAcwClient.AssemblyInfo.cs
 D:\Repos\DistSysACW\DistSysAcwClient\obj\Debug\net6.0\DistSysAcwClient.csproj.CoreCompileInputs.cache
 D:\Repos\DistSysACW\DistSysAcwClient\obj\Debug\net6.0\DistSysAcwClient.sourcelink.json
+D:\Repos\DistSysACW\DistSysAcwClient\bin\Debug\net6.0\DistSysAcwClient.exe
+D:\Repos\DistSysACW\DistSysAcwClient\bin\Debug\net6.0\DistSysAcwClient.deps.json
+D:\Repos\DistSysACW\DistSysAcwClient\bin\Debug\net6.0\DistSysAcwClient.runtimeconfig.json
+D:\Repos\DistSysACW\DistSysAcwClient\bin\Debug\net6.0\DistSysAcwClient.dll
+D:\Repos\DistSysACW\DistSysAcwClient\bin\Debug\net6.0\DistSysAcwClient.pdb
+D:\Repos\DistSysACW\DistSysAcwClient\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Repos\DistSysACW\DistSysAcwClient\obj\Debug\net6.0\DistSysA.1F805A75.Up2Date
+D:\Repos\DistSysACW\DistSysAcwClient\obj\Debug\net6.0\DistSysAcwClient.dll
+D:\Repos\DistSysACW\DistSysAcwClient\obj\Debug\net6.0\refint\DistSysAcwClient.dll
+D:\Repos\DistSysACW\DistSysAcwClient\obj\Debug\net6.0\DistSysAcwClient.pdb
+D:\Repos\DistSysACW\DistSysAcwClient\obj\Debug\net6.0\DistSysAcwClient.genruntimeconfig.cache
+D:\Repos\DistSysACW\DistSysAcwClient\obj\Debug\net6.0\ref\DistSysAcwClient.dll
