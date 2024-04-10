@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Security.Cryptography;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -41,12 +42,17 @@ namespace Client
 
                 switch (input[0])//controller switch
                 {
+
                     case "TalkBack":
                         await TalkBack(input[1], input);
                         break;
 
                     case "User":
                         await User(input[1], input);
+                        break;
+
+                    case "Protected":
+                        await Protected(input);
                         break;
                 }
 
@@ -106,24 +112,92 @@ namespace Client
                     if(message.StatusCode == HttpStatusCode.OK)
                     {
                         Console.WriteLine("Got API Key");
+                        string apiContent = await message.Content.ReadAsStringAsync();
+                        apiKey = apiContent;
                     }
                     Console.WriteLine(message);
                     break;
 
                 case "Set":
                     name = pContent[2];
-                    apiKey = pContent[3];
+                    try
+                    {
+                        apiKey = pContent[3];
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine("Please eneter ApiKey Field by User Set");
+                        break;
+                    }
+
                     Console.WriteLine("Stored.");
                     break;
 
                 case "Delete":
-                    client.DefaultRequestHeaders.Add("ApiKey", apiKey);
+                    SetApiKey();
                     Task<string> userDelete = Delete("user/removeuser?username=" + pContent[3]);
                     response = await userDelete;
                     Console.WriteLine(response);
                     break;
-                    
+
+                case "Role":
+                    if (apiKey == null)
+                    {
+                        Console.WriteLine("You need to do a User Post or User Set first.");
+                    }
+
+                    SetApiKey();
+                    JsonObject job = new JsonObject();
+                    job["username"] = pContent[2];
+                    job["role"] = pContent[3].ToLower();
+                    Task<string> userChangeRole = Put("user/changerole", job);
+                    response = await userChangeRole;
+                    Console.WriteLine(response);
+                    break;           
             }
+        }
+
+        static async Task Protected(string[] pContent)
+        {
+            string command = pContent[1].ToLower();
+            string response = "";
+            if (apiKey == null)
+            {
+                Console.WriteLine("You need to do a User Post or User Set first.");
+                return;
+            }
+
+            switch (command)
+            {
+                case "hello":
+                    SetApiKey();
+                    Task<string> protectedHello = Get("protected/hello");
+                    response = await protectedHello;
+                    Console.WriteLine(response);
+                    break;
+
+                case "sha1":
+                    SetApiKey();
+                    string sha1Message = pContent[2];
+                    Task<string> protectedSha1 = Get("protected/sha1?message=" + sha1Message);
+                    response = await protectedSha1;
+                    Console.WriteLine(response);
+                    break;
+
+                case "sha256":
+                    SetApiKey();
+                    string sha256Message = pContent[2];
+                    Task<string> protectedSha256 = Get("protected/sha256?message=" + sha256Message);
+                    response = await protectedSha256;
+                    Console.WriteLine(response);
+                    break;
+            }
+        }
+
+        static void SetApiKey()
+        {
+            client.DefaultRequestHeaders.Remove("ApiKey");
+            client.DefaultRequestHeaders.Add("ApiKey", apiKey);
         }
 
         static async Task<string> Get(string path)
@@ -148,10 +222,10 @@ namespace Client
             return response;
         }
 
-        static async Task<string> Put(string path, string jsonBody)
+        static async Task<string> Put(string path, JsonObject jsonObject)
         {
             string responseString = "";
-            HttpResponseMessage response = await client.PutAsJsonAsync(path, jsonBody);
+            HttpResponseMessage response = await client.PutAsJsonAsync(path, jsonObject);
             responseString = await response.Content.ReadAsStringAsync();
             return responseString;
         }
