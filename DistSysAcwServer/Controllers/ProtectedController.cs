@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 using DistSysAcwServer.Models;
@@ -10,10 +11,13 @@ namespace DistSysAcwServer.Controllers
     [Route("api/[controller]")]
     public class ProtectedController : BaseController
     {
+
+        readonly RSA rsa;
         readonly UserDbAccess _userDbAccess;
-        public ProtectedController(Models.UserContext dbcontext, UserDbAccess pUserDbAccess) : base(dbcontext)
+        public ProtectedController(Models.UserContext dbcontext, UserDbAccess pUserDbAccess, RSA pRSA) : base(dbcontext)
         {
             _userDbAccess = pUserDbAccess;
+            rsa = pRSA;
         }
 
         //Task 9 - /Protected/Hello
@@ -63,5 +67,36 @@ namespace DistSysAcwServer.Controllers
 
             return Ok(returnMessage);
         }
+
+        //Task11
+        [HttpGet("getpublickey")]
+        [Authorize(Roles = "admin,user")]
+        public IActionResult GetPublicKey([FromHeader] string apiKey)
+        {
+            if (!_userDbAccess.ApiKeyUserExists(apiKey))
+            {
+                return BadRequest("ApiKey is not in database");
+            }
+
+            RSAParameters publicKeyParams = rsa.ExportParameters(false);
+            string pubKeyXML = ToXmlString(publicKeyParams);
+            Console.Write(pubKeyXML);
+            return Ok(pubKeyXML);
+        }
+
+        private string ToXmlString(RSAParameters rsaParams)
+        {
+            StringBuilder xmlBuilder = new StringBuilder();
+            xmlBuilder.Append("<RSAKeyValue>");
+            xmlBuilder.Append("<Modulus>").Append(Convert.ToBase64String(rsaParams.Modulus)).Append("</Modulus>");
+            xmlBuilder.Append("<Exponent>").Append(Convert.ToBase64String(rsaParams.Exponent)).Append("</Exponent>");
+            xmlBuilder.Append("</RSAKeyValue>");
+            return xmlBuilder.ToString();
+        }
+
+        [HttpPut("Sign")]
+        [Authorize(Roles = "admin,user")]
+        public IActionResult Sign([FromHeader]string apiKey, ])
+
     }
 }

@@ -21,7 +21,7 @@ namespace Client
 
         static async Task Main()
         {
-            client.BaseAddress = new Uri("http://localhost:53415/api/");
+            client.BaseAddress = new Uri("http://150.237.94.9/3553366/api/");
 
             Console.WriteLine("Hello. What would you like to do?");
             string inputString = Console.ReadLine();
@@ -126,7 +126,15 @@ namespace Client
                     }
                     catch(Exception e)
                     {
-                        Console.WriteLine("Please eneter ApiKey Field by User Set");
+                        Console.WriteLine("Please enter ApiKey Field by User Set");
+                        break;
+                    }
+
+                    Task<string> checkKey = Get("user/checkapikeyexist/" + apiKey);
+                    string res = await checkKey;
+                    if (res == "false")
+                    {
+                        Console.WriteLine("Please enter a valid ApiKey Field");
                         break;
                     }
 
@@ -191,6 +199,20 @@ namespace Client
                     response = await protectedSha256;
                     Console.WriteLine(response);
                     break;
+
+                case "getpublickey":
+                    SetApiKey();
+                    Task<HttpResponseMessage> getpublickey = HttpGet("protected/getpublickey");
+                    HttpResponseMessage httpResponse = await getpublickey;
+                    if(httpResponse.StatusCode == HttpStatusCode.OK)
+                    {
+                        Console.WriteLine("Got Public Key");
+                        break;
+                    }
+
+                    Console.WriteLine("Couldn’t Get the Public Key");
+
+                    break;
             }
         }
 
@@ -206,6 +228,12 @@ namespace Client
             HttpResponseMessage response = await client.GetAsync(path);
             responseString = await response.Content.ReadAsStringAsync();
             return responseString;
+        }
+
+        static async Task<HttpResponseMessage> HttpGet(string path)
+        {
+            HttpResponseMessage response = await client.GetAsync(path);
+            return response;
         }
 
         static async Task<string> Delete(string path)

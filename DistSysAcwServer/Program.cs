@@ -2,6 +2,7 @@ using DistSysAcwServer.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using System.Reflection;
+using System.Security.Cryptography;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,10 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddTransient<IAuthorizationHandler, DistSysAcwServer.Auth.CustomAuthorizationHandler>();
 
+
+//TASK11 RSA KEY CREATION ON SERVER STARTUP
+RSA rsa = RSA.Create();
+builder.Services.AddSingleton(rsa);
 
 var app = builder.Build();
 
