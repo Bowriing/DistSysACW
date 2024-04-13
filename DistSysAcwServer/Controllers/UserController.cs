@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Text.Json.Nodes;
 using DistSysAcwServer.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DistSysAcwServer.Controllers
@@ -51,6 +52,7 @@ namespace DistSysAcwServer.Controllers
             };
 
             _userDbAccess.CreateUser(user);
+            _userDbAccess.CreateLog(user.UserName + " requested" + HttpContext.Request.Path.ToString());
 
             return Ok(ApiKey);
         }

@@ -7,7 +7,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json.Nodes;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -18,10 +20,11 @@ namespace Client
         static HttpClient client = new HttpClient();
         static string name;
         static string apiKey;
+        static string pubKey;
 
         static async Task Main()
         {
-            client.BaseAddress = new Uri("http://150.237.94.9/3553366/api/");
+            client.BaseAddress = new Uri("http://localhost:53415/api/");
 
             Console.WriteLine("Hello. What would you like to do?");
             string inputString = Console.ReadLine();
@@ -161,7 +164,8 @@ namespace Client
                     Task<string> userChangeRole = Put("user/changerole", job);
                     response = await userChangeRole;
                     Console.WriteLine(response);
-                    break;           
+                    break;   
+                    
             }
         }
 
@@ -201,9 +205,9 @@ namespace Client
                     break;
 
                 case "getpublickey":
-                    SetApiKey();
-                    Task<HttpResponseMessage> getpublickey = HttpGet("protected/getpublickey");
-                    HttpResponseMessage httpResponse = await getpublickey;
+                    HttpResponseMessage httpResponse = await GetPublicKey();
+                    pubKey = await httpResponse.Content.ReadAsStringAsync();
+
                     if(httpResponse.StatusCode == HttpStatusCode.OK)
                     {
                         Console.WriteLine("Got Public Key");
@@ -213,7 +217,62 @@ namespace Client
                     Console.WriteLine("Couldn’t Get the Public Key");
 
                     break;
+
+                case "sign":
+                    if(apiKey == null)
+                    {
+                        Console.WriteLine("Client doesn’t yet have the public key");
+                        break;
+                    }
+
+                    string message = pContent[2];
+                    Task<string> signResponse = Get("protected/sign?message=" + message);
+                    response = await signResponse;
+
+                   if(!PubkeyVerify(message, response))
+                   {
+                       Console.WriteLine("Message was not successfully signed");
+                       break;
+                   }
+
+                   if(PubkeyVerify(message, response))
+                   {
+                       Console.WriteLine("Message was successfully signed");
+                   }
+                   break;
             }
+        }
+
+        static bool PubkeyVerify(string ogMessage, string signedMessage)
+        {
+            using RSA rsa = RSA.Create();
+            rsa.FromXmlString(pubKey);
+
+            signedMessage = signedMessage.Replace("-", "");
+            byte[] hexbytes = HexToByteArray(signedMessage);
+            byte[] ogMessageBytes = Encoding.UTF8.GetBytes(ogMessage);
+
+            return rsa.VerifyData(ogMessageBytes, hexbytes, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+        }
+
+        static byte[] HexToByteArray(string hex)
+        {
+            int numofchars = hex.Length;
+            byte[] bytes = new byte[numofchars / 2];
+            for(int i = 0; i < numofchars; i += 2)
+            {
+                bytes[i/2] = Convert.ToByte(hex.Substring(i, 2), 16);
+            }
+            return bytes;
+        }
+
+        static async Task<HttpResponseMessage> GetPublicKey()
+        {
+            SetApiKey();
+            Task<HttpResponseMessage> getpublickey = HttpGet("protected/getpublickey");
+            HttpResponseMessage httpResponse = await getpublickey;
+
+            return httpResponse;
         }
 
         static void SetApiKey()

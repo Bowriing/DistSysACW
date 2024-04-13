@@ -80,7 +80,6 @@ namespace DistSysAcwServer.Controllers
 
             RSAParameters publicKeyParams = rsa.ExportParameters(false);
             string pubKeyXML = ToXmlString(publicKeyParams);
-            Console.Write(pubKeyXML);
             return Ok(pubKeyXML);
         }
 
@@ -94,9 +93,31 @@ namespace DistSysAcwServer.Controllers
             return xmlBuilder.ToString();
         }
 
-        [HttpPut("Sign")]
+        [HttpGet("Sign")]
         [Authorize(Roles = "admin,user")]
-        public IActionResult Sign([FromHeader]string apiKey, ])
+        public IActionResult Sign([FromHeader]string apiKey, string message)
+        {
+            if (!_userDbAccess.ApiKeyUserExists(apiKey))
+            {
+                return BadRequest("ApiKey is not in database.");
+            }
+
+            else if(message == null || message == " ")
+            {
+                return BadRequest("Message is null or empty");
+            }
+
+            //Convert to ascii
+            byte[] messageBytes = Encoding.ASCII.GetBytes(message);
+
+            //add signiture using private key and sha1
+            byte[] signedBytes = rsa.SignData(messageBytes, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+
+            //convert to hex for return
+            string hexBytes = BitConverter.ToString(signedBytes);
+
+            return Ok(hexBytes);
+        }
 
     }
 }

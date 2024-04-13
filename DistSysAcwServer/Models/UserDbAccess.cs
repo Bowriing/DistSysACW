@@ -98,5 +98,14 @@ namespace DistSysAcwServer.Models
             _userContext.Users.Update(currentUser);
             _userContext.SaveChanges();
         }
+
+        public void CreateLog(string pLogString)
+        {
+            DateTime dt = DateTime.Now;
+            Log log = new Log(pLogString, dt);
+
+            _userContext.Logs.Add(log);
+            _userContext.SaveChanges();
+        }
     }
 }
