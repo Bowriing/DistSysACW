@@ -8,6 +8,7 @@ namespace DistSysAcwServer.Models
 
         public DbSet<User> Users { get; set; }
         public DbSet<Log> Logs { get; set; }
+        public DbSet<LogArchive> LogArchives{ get; set; }
 
         //TODO: Task13
 

@@ -31,6 +31,7 @@ namespace DistSysAcwServer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("logID"), 1L, 1);
 
                     b.Property<string>("UserApiKey")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("logDateTime")
@@ -45,6 +46,30 @@ namespace DistSysAcwServer.Migrations
                     b.HasIndex("UserApiKey");
 
                     b.ToTable("Logs");
+                });
+
+            modelBuilder.Entity("DistSysAcwServer.Models.LogArchive", b =>
+                {
+                    b.Property<int>("logID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("logID"), 1L, 1);
+
+                    b.Property<string>("UserApiKey")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("logDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("logString")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("logID");
+
+                    b.ToTable("LogArchives");
                 });
 
             modelBuilder.Entity("DistSysAcwServer.Models.User", b =>
@@ -66,9 +91,13 @@ namespace DistSysAcwServer.Migrations
 
             modelBuilder.Entity("DistSysAcwServer.Models.Log", b =>
                 {
-                    b.HasOne("DistSysAcwServer.Models.User", null)
+                    b.HasOne("DistSysAcwServer.Models.User", "User")
                         .WithMany("logs")
-                        .HasForeignKey("UserApiKey");
+                        .HasForeignKey("UserApiKey")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("DistSysAcwServer.Models.User", b =>

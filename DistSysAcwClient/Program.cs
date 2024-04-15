@@ -133,22 +133,20 @@ namespace Client
                         break;
                     }
 
-                    Task<string> checkKey = Get("user/checkapikeyexist/" + apiKey);
-                    string res = await checkKey;
-                    if (res == "false")
-                    {
-                        Console.WriteLine("Please enter a valid ApiKey Field");
-                        break;
-                    }
-
                     Console.WriteLine("Stored.");
                     break;
 
                 case "Delete":
                     SetApiKey();
-                    Task<string> userDelete = Delete("user/removeuser?username=" + pContent[3]);
+                    Task<string> userDelete = Delete("user/removeuser?username=" + name);
                     response = await userDelete;
-                    Console.WriteLine(response);
+                    if(response == "true")
+                    {
+                        Console.WriteLine("True");
+                        break;
+                    }
+
+                    Console.WriteLine("False");
                     break;
 
                 case "Role":
@@ -161,7 +159,7 @@ namespace Client
                     JsonObject job = new JsonObject();
                     job["username"] = pContent[2];
                     job["role"] = pContent[3].ToLower();
-                    Task<string> userChangeRole = Put("user/changerole", job);
+                    Task<string> userChangeRole = PostJoB("user/changerole", job);
                     response = await userChangeRole;
                     Console.WriteLine(response);
                     break;   
@@ -307,6 +305,14 @@ namespace Client
         {
             HttpResponseMessage response = await client.PostAsJsonAsync(path, jsonBody);
             return response;
+        }
+
+        static async Task<string> PostJoB(string path, JsonObject job)
+        {
+            string responseString = "";
+            HttpResponseMessage response = await client.PostAsJsonAsync(path, job);
+            responseString = await response.Content.ReadAsStringAsync();
+            return responseString;
         }
 
         static async Task<string> Put(string path, JsonObject jsonObject)

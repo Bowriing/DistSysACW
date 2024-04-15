@@ -15,7 +15,11 @@ namespace DistSysAcwServer.Models
         // TODO: Create a User Class for use with Entity Framework
         // Note that you can use the [key] attribute to set your ApiKey Guid as the primary key 
         #endregion
-        public User() { }
+        public User()
+        {
+            logs = new HashSet<Log>();
+        }
+
 
         public enum UserRole {admin = 0,user = 1} // number corresponds to the role type
 
@@ -26,7 +30,6 @@ namespace DistSysAcwServer.Models
         public UserRole Role { get; set; }
 
         public ICollection<Log> logs { get; set; }
-
     }
 
     #region Task13?

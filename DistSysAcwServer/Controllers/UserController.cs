@@ -51,9 +51,6 @@ namespace DistSysAcwServer.Controllers
                 UserName = username
             };
 
-            _userDbAccess.CreateUser(user);
-            _userDbAccess.CreateLog(user.UserName + " requested" + HttpContext.Request.Path.ToString());
-
             return Ok(ApiKey);
         }
 
@@ -80,19 +77,27 @@ namespace DistSysAcwServer.Controllers
         [HttpGet("CheckApiKeyExist/{apiKey}")]
         public bool CheckApiKeyUserExist(string apiKey)
         {
+            User user = _userDbAccess.GetUserByApiKey(apiKey);
+            _userDbAccess.CreateLog(user.UserName + " requested" + HttpContext.Request.Path.ToString(), user);
             return _userDbAccess.ApiKeyUserExists(apiKey);
         }
 
         [HttpGet("CheckApiKeyExistUser/{apiKey}")]
         public User CheckApiKeyUserExistUserReturn(string apiKey)
         {
+            User user = _userDbAccess.GetUserByApiKey(apiKey);
+            _userDbAccess.CreateLog(user.UserName + " requested" + HttpContext.Request.Path.ToString(), user);
             return _userDbAccess.GetUserByApiKey(apiKey);
         }
 
         [HttpGet("CheckApiKeyUsernameExist/{apiKey}/{username}")]
         public bool CheckApiKeyUserExist(string apiKey, string username)
         {
+            User user = _userDbAccess.GetUserByApiKey(apiKey);
+            _userDbAccess.CreateLog(user.UserName + " requested" + HttpContext.Request.Path.ToString(), user);
             return _userDbAccess.ApiKeyUsernameExists(apiKey,username);
+
+            user.l
         }
 
         //Task 7 - Remove User DELETE Request
@@ -100,17 +105,23 @@ namespace DistSysAcwServer.Controllers
         [Authorize(Roles = "admin,user")]
         public IActionResult RemoveUser([FromHeader]string ApiKey, [FromQuery]string username)
         {
+            User user = _userDbAccess.GetUserByApiKey(ApiKey);
+            _userDbAccess.CreateLog(user.UserName + " requested" + HttpContext.Request.Path.ToString(), user);
+            _userDbAccess.ArchiveLogs(ApiKey);
             return Ok(_userDbAccess.DeleteUser(ApiKey, username));
         }
 
         //Task 8 - Change Role 
-        [HttpPut("changerole")]
+        [HttpPost("changerole")]
         [Authorize(Roles = "admin")]
-        public IActionResult ChangeUser([FromBody]JsonObject jsonData)
+        public IActionResult ChangeUser([FromHeader] string apiKey, [FromBody]JsonObject jsonData)
         {
             //set variables from json object
             string username = jsonData["username"]?.ToString();
             string role = jsonData["role"]?.ToString();
+
+            User user = _userDbAccess.GetUserByUsername(username);
+            _userDbAccess.CreateLog(user.UserName + "'s Role Changed" + HttpContext.Request.Path.ToString(), user);
 
             //if username does not exist
             bool validUser = _userDbAccess.UserUsernameExists(username);

@@ -99,12 +99,31 @@ namespace DistSysAcwServer.Models
             _userContext.SaveChanges();
         }
 
-        public void CreateLog(string pLogString)
+        public void CreateLog(string pLogString, User user)
         {
             DateTime dt = DateTime.Now;
             Log log = new Log(pLogString, dt);
+            user.logs.Add(log);
 
             _userContext.Logs.Add(log);
+            _userContext.SaveChanges();
+        }
+
+        public void ArchiveLogs(string apiKey)
+        {
+            var logsArchive = _userContext.Logs.Where(log => log.UserApiKey == apiKey).ToList();
+
+            var archivedLogs = logsArchive.Select(log => new LogArchive
+            {
+                logString = log.logString,
+                logDateTime = log.logDateTime,
+                UserApiKey = log.UserApiKey
+            }).ToList();
+
+            _userContext.LogArchives.AddRange(archivedLogs);
+            _userContext.SaveChanges();
+
+            _userContext.Logs.RemoveRange(logsArchive);
             _userContext.SaveChanges();
         }
     }
