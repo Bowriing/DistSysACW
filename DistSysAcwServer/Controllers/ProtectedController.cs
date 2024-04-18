@@ -14,10 +14,13 @@ namespace DistSysAcwServer.Controllers
 
         readonly RSA rsa;
         readonly UserDbAccess _userDbAccess;
-        public ProtectedController(Models.UserContext dbcontext, UserDbAccess pUserDbAccess, RSA pRSA) : base(dbcontext)
+        protected EncryptionService _encryptionService;
+
+        public ProtectedController(Models.UserContext dbcontext, UserDbAccess pUserDbAccess, RSA pRSA, EncryptionService pEncryptionService) : base(dbcontext)
         {
             _userDbAccess = pUserDbAccess;
             rsa = pRSA;
+            _encryptionService = pEncryptionService;
         }
 
         //Task 9 - /Protected/Hello
@@ -95,9 +98,9 @@ namespace DistSysAcwServer.Controllers
 
         [HttpGet("Sign")]
         [Authorize(Roles = "admin,user")]
-        public IActionResult Sign([FromHeader]string apiKey, string message)
+        public IActionResult Sign([FromHeader]string ApiKey, string message)
         {
-            if (!_userDbAccess.ApiKeyUserExists(apiKey))
+            if (!_userDbAccess.ApiKeyUserExists(ApiKey))
             {
                 return BadRequest("ApiKey is not in database.");
             }
@@ -119,5 +122,89 @@ namespace DistSysAcwServer.Controllers
             return Ok(hexBytes);
         }
 
+        //Task14
+        [HttpGet("mashify")]
+        [Authorize(Roles = "admin")]
+        public IActionResult Mashify([FromHeader]string ApiKey, string encryptedString, string encryptedsymkey, string encryptedIV)
+        {
+            if (_userDbAccess.ApiKeyUserExists(ApiKey) == false)
+            {
+                return BadRequest();
+            }
+
+            //decrypt data
+            string decryptedString = _encryptionService.DecryptRsa(encryptedString);
+            byte[] aesKey = _encryptionService.DecryptRsaToBytes(encryptedsymkey);
+            byte[] aesIV = _encryptionService.DecryptRsaToBytes(encryptedIV);
+
+            string mashifiedString = MashifyString(decryptedString);
+            string encryptedResponse = _encryptionService.EncryptAes(mashifiedString, aesKey, aesIV);
+
+            User user = _userDbAccess.GetUserByApiKey(ApiKey);
+            _userDbAccess.CreateLog(user.UserName + " requested" + HttpContext.Request.Path.ToString(), user);
+
+            return Ok(encryptedResponse);
+        }
+
+        private string MashifyString(string input)
+        {
+            char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' };
+            var sb = new StringBuilder(input.Length);
+            foreach (char c in input)
+            {
+                if (Array.IndexOf(vowels, c) >= 0)
+                    sb.Append('X');
+                else
+                    sb.Append(c);
+            }
+            char[] charArray = sb.ToString().ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
+    }
+
+    public class EncryptionService
+    {
+        private RSA _privateKey;
+
+        public EncryptionService(RSA privateKey)
+        {
+            _privateKey = privateKey;
+        }
+
+        public string DecryptRsa(string input)
+        {
+            byte[] bytesToDecrypt = Convert.FromHexString(input.Replace("-", ""));
+            byte[] decryptedBytes = _privateKey.Decrypt(bytesToDecrypt, RSAEncryptionPadding.OaepSHA1);
+            return Encoding.UTF8.GetString(decryptedBytes);
+        }
+
+        public byte[] DecryptRsaToBytes(string input)
+        {
+            byte[] bytesToDecrypt = Convert.FromHexString(input.Replace("-", ""));
+            return _privateKey.Decrypt(bytesToDecrypt, RSAEncryptionPadding.OaepSHA1);
+        }
+
+        public string EncryptAes(string plaintext, byte[] key, byte[] iv)
+        {
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = key;
+                aesAlg.IV = iv;
+
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+                using (var msEncrypt = new MemoryStream())
+                {
+                    using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    using (var swEncrypt = new StreamWriter(csEncrypt))
+                    {
+                        swEncrypt.Write(plaintext);
+                    }
+                    var encrypted = msEncrypt.ToArray();
+                    return BitConverter.ToString(encrypted).Replace("-", "");
+                }
+            }
+        }
     }
 }

@@ -96,8 +96,6 @@ namespace DistSysAcwServer.Controllers
             User user = _userDbAccess.GetUserByApiKey(apiKey);
             _userDbAccess.CreateLog(user.UserName + " requested" + HttpContext.Request.Path.ToString(), user);
             return _userDbAccess.ApiKeyUsernameExists(apiKey,username);
-
-            user.l
         }
 
         //Task 7 - Remove User DELETE Request

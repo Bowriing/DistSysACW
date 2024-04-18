@@ -21,10 +21,12 @@ namespace Client
         static string name;
         static string apiKey;
         static string pubKey;
+        static byte[] AESkey;
+        static byte[] IV;
 
         static async Task Main()
         {
-            client.BaseAddress = new Uri("http://localhost:53415/api/");
+            client.BaseAddress = new Uri("http://150.237.94.9/3553366/api/");
 
             Console.WriteLine("Hello. What would you like to do?");
             string inputString = Console.ReadLine();
@@ -219,6 +221,12 @@ namespace Client
                 case "sign":
                     if(apiKey == null)
                     {
+                        Console.WriteLine("You need to do a User Post or User Set first");
+                        break;
+                    }
+
+                    else if(pubKey == null)
+                    {
                         Console.WriteLine("Client doesn’t yet have the public key");
                         break;
                     }
@@ -238,7 +246,57 @@ namespace Client
                        Console.WriteLine("Message was successfully signed");
                    }
                    break;
+
+                case "mashify":
+                    if(apiKey == null)
+                    {
+                        Console.WriteLine("You need to do a User Post or User Set first");
+                        break;
+                    }
+
+                    if(pubKey == null || pubKey.Length <= 1)
+                    {
+                        Console.WriteLine("Client doesn't yet have the public key");
+                    }
+
+                    message = pContent[2];
+
+                    using (Aes aes = Aes.Create())
+                    {
+                        aes.GenerateKey();
+                        aes.GenerateIV();
+                        AESkey = aes.Key;
+                        IV = aes.IV;
+                    }
+
+                    using (RSA rsa = RSA.Create())
+                    {
+                        rsa.FromXmlString(pubKey);
+
+                        byte[] encrypyedBytes = EncryptWithRSA(message, rsa);
+                        byte[] encryptedKeyBytes = EncryptWithRSA(Convert.ToBase64String(AESkey), rsa);
+                        byte[] encryptedIVBytes = EncryptWithRSA(Convert.ToBase64String(IV), rsa);
+
+                        string encryptedString = Uri.EscapeDataString(BitConverter.ToString(encrypyedBytes));
+                        string encryptedKey = Uri.EscapeDataString(BitConverter.ToString(encryptedKeyBytes));
+                        string encryptedIV = Uri.EscapeDataString(BitConverter.ToString(encryptedIVBytes));
+
+                        SetApiKey();
+                        Console.Write("protected/mashify?encryptedString=" + encryptedString + "&encryptedSymKey=" + encryptedKey + "&encryptedIV=" + encryptedIV);
+                        Task <HttpResponseMessage> mashifyResponse = GetHttp("protected/mashify?encryptedString="+encryptedString+"&encryptedSymKey="+encryptedKey+"&encryptedIV="+encryptedIV);
+                        //HttpResponseMessage responseHttp = await mashifyResponse;
+                        HttpResponseMessage responseMessage = await mashifyResponse;
+
+                        Console.WriteLine(responseMessage);
+                        break;
+                    }          
             }
+        }
+
+        static byte[] EncryptWithRSA(string dataToEncrypt, RSA rsa)
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(dataToEncrypt);
+            return rsa.Encrypt(bytes, RSAEncryptionPadding.OaepSHA1);
         }
 
         static bool PubkeyVerify(string ogMessage, string signedMessage)
@@ -277,6 +335,12 @@ namespace Client
         {
             client.DefaultRequestHeaders.Remove("ApiKey");
             client.DefaultRequestHeaders.Add("ApiKey", apiKey);
+        }
+
+        static async Task<HttpResponseMessage> GetHttp(string path)
+        {
+            HttpResponseMessage response = await client.GetAsync(path);
+            return response;
         }
 
         static async Task<string> Get(string path)
