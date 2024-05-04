@@ -3,85 +3,41 @@
   "WorkspaceRootPath": "D:\\Repos\\DistSysACW\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{276D5CFF-019E-4FE1-A6CE-BD6135C9259F}|DistSysAcwClient\\DistSysAcwClient.csproj|d:\\repos\\distsysacw\\distsysacwclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{276D5CFF-019E-4FE1-A6CE-BD6135C9259F}|DistSysAcwClient\\DistSysAcwClient.csproj|solutionrelative:distsysacwclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\controllers\\protectedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\controllers\\protectedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DistSysAcw/True/SqlTable/dbo.LogArchives.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DistSysAcw/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DistSysAcw/True/SqlTable/dbo.Logs.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\controllers\\talkbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\controllers\\talkbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\models\\userdbaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\models\\userdbaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\models\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\models\\logarchive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\models\\logarchive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\auth\\customauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\auth\\customauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\auth\\customauthorizationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\auth\\customauthorizationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\auth\\customauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\auth\\customauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DistSysAcw/True/SqlTable/dbo.Logs.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\DistSysACW\\DistSysAcwServer\\Migrations\\20240415125019_LogWithForeignKey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DistSysAcwServer\\Migrations\\20240415125019_LogWithForeignKey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bowri\\AppData\\Local\\Temp\\jilin1oe..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\DistSysACW\\DistSysAcwServer\\Migrations\\20240413231722_apikeyforlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DistSysAcwServer\\Migrations\\20240413231722_apikeyforlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\migrations\\20240415125223_log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\migrations\\20240415125223_log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|d:\\repos\\distsysacw\\distsysacwserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17558958-C35A-43BC-A0D7-D3C9360B7DFD}|DistSysAcwServer\\DistSysAcwServer.csproj|solutionrelative:distsysacwserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -91,7 +47,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -111,161 +67,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Program.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Program.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Program.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Program.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAB0AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T15:49:36.421Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Controllers\\BaseController.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Controllers\\BaseController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T12:27:39.548Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProtectedController.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Controllers\\ProtectedController.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Controllers\\ProtectedController.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Controllers\\ProtectedController.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Controllers\\ProtectedController.cs",
-              "ViewState": "AQIAALYAAAAAAAAAAAAMwLIAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T22:20:25.873Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Models\\User.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Models\\User.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Models\\User.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Models\\User.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAIwBMAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T19:55:56.256Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Log.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Models\\Log.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Models\\Log.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Models\\Log.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Models\\Log.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T19:56:02.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwClient\\Program.cs",
-              "RelativeDocumentMoniker": "DistSysAcwClient\\Program.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwClient\\Program.cs",
-              "RelativeToolTip": "DistSysAcwClient\\Program.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAQwBwBAABuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T22:20:58.539Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Controllers\\UserController.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAqwFcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T22:18:58.2Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "dbo.Users [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DistSysAcw/True/SqlTable/dbo.Users.sql",
-              "ToolTip": "dbo.Users [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-04-13T22:21:47.558Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\appsettings.Development.json",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\appsettings.Development.json",
-              "RelativeToolTip": "DistSysAcwServer\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-16T18:08:04.151Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserDbAccess.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Models\\UserDbAccess.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Models\\UserDbAccess.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Models\\UserDbAccess.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Models\\UserDbAccess.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAWwG0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T22:19:55.518Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\appsettings.json",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\appsettings.json",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\appsettings.json",
-              "RelativeToolTip": "DistSysAcwServer\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-16T17:09:56.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TalkbackController.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Controllers\\TalkbackController.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Controllers\\TalkbackController.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Controllers\\TalkbackController.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Controllers\\TalkbackController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T22:20:26.679Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "CustomAuthorizationHandler.cs",
               "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Auth\\CustomAuthorizationHandler.cs",
               "RelativeDocumentMoniker": "DistSysAcwServer\\Auth\\CustomAuthorizationHandler.cs",
               "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Auth\\CustomAuthorizationHandler.cs",
               "RelativeToolTip": "DistSysAcwServer\\Auth\\CustomAuthorizationHandler.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAwwCcAAAAyAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T12:28:05.919Z"
+              "WhenOpened": "2024-05-04T11:19:57.009Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Properties\\launchSettings.json",
+              "RelativeToolTip": "DistSysAcwServer\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-04T11:19:44.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "UserContext.cs",
               "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Models\\UserContext.cs",
               "RelativeDocumentMoniker": "DistSysAcwServer\\Models\\UserContext.cs",
@@ -273,84 +101,90 @@
               "RelativeToolTip": "DistSysAcwServer\\Models\\UserContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T19:15:21.347Z"
+              "WhenOpened": "2024-05-04T11:18:46.856Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "LogArchive.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Models\\LogArchive.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Models\\LogArchive.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Models\\LogArchive.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Models\\LogArchive.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Program.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Program.cs",
+              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Program.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T19:44:17.785Z"
+              "WhenOpened": "2024-05-04T11:18:27.051Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 2,
+              "Title": "dbo.Users [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DistSysAcw/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "dbo.Users [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-05-04T11:11:31.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwClient\\Program.cs",
+              "RelativeDocumentMoniker": "DistSysAcwClient\\Program.cs",
+              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwClient\\Program.cs",
+              "RelativeToolTip": "DistSysAcwClient\\Program.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAQwCgAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T11:08:14.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbo.LogArchives [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DistSysAcw/True/SqlTable/dbo.LogArchives.sql",
+              "ToolTip": "dbo.LogArchives [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-05-04T11:31:54.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "DistSysAcwServer\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Controllers\\UserController.cs",
+              "RelativeToolTip": "DistSysAcwServer\\Controllers\\UserController.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAA0wDMAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T11:06:42.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.Logs [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DistSysAcw/True/SqlTable/dbo.Logs.sql",
+              "ToolTip": "dbo.Logs [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-05-04T11:31:23.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "CustomAuthenticationHandler.cs",
               "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Auth\\CustomAuthenticationHandler.cs",
               "RelativeDocumentMoniker": "DistSysAcwServer\\Auth\\CustomAuthenticationHandler.cs",
               "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Auth\\CustomAuthenticationHandler.cs",
               "RelativeToolTip": "DistSysAcwServer\\Auth\\CustomAuthenticationHandler.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAIwE8AAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T12:27:41.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "dbo.Logs [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DistSysAcw/True/SqlTable/dbo.Logs.sql",
-              "ToolTip": "dbo.Logs [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-04-13T23:00:07.098Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "20240415125019_LogWithForeignKey.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Migrations\\20240415125019_LogWithForeignKey.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Migrations\\20240415125019_LogWithForeignKey.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Migrations\\20240415125019_LogWithForeignKey.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Migrations\\20240415125019_LogWithForeignKey.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T12:50:19.343Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "20240415125223_Log.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Migrations\\20240415125223_Log.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Migrations\\20240415125223_Log.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Migrations\\20240415125223_Log.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Migrations\\20240415125223_Log.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T12:52:23.677Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "SQLQuery1.sql ",
-              "DocumentMoniker": "C:\\Users\\bowri\\AppData\\Local\\Temp\\jilin1oe..sql",
-              "ToolTip": "SQLQuery1.sql ",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-04-13T23:18:12.569Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "20240413231722_apikeyforlog.cs",
-              "DocumentMoniker": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Migrations\\20240413231722_apikeyforlog.cs",
-              "RelativeDocumentMoniker": "DistSysAcwServer\\Migrations\\20240413231722_apikeyforlog.cs",
-              "ToolTip": "D:\\Repos\\DistSysACW\\DistSysAcwServer\\Migrations\\20240413231722_apikeyforlog.cs",
-              "RelativeToolTip": "DistSysAcwServer\\Migrations\\20240413231722_apikeyforlog.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T23:17:22.092Z"
+              "WhenOpened": "2024-05-04T11:19:57.844Z",
+              "EditorCaption": ""
             }
           ]
         }

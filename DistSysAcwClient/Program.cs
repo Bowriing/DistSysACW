@@ -38,6 +38,7 @@ namespace Client
                 {
                     Console.WriteLine("What would you like to do next?");
                     inputString = Console.ReadLine();
+                    Console.Clear();
                 }
 
                 string[] input = inputString.Split(" ");
@@ -172,6 +173,11 @@ namespace Client
         static async Task Protected(string[] pContent)
         {
             string command = pContent[1].ToLower();
+            string command2 = "";
+            if(pContent.Length > 2)
+            {
+                command2 = pContent[2].ToLower();
+            }
             string response = "";
             if (apiKey == null)
             {
@@ -204,7 +210,13 @@ namespace Client
                     Console.WriteLine(response);
                     break;
 
-                case "getpublickey":
+                case "get":
+                    if (command2 != "publickey")
+                    {
+                        Console.WriteLine("Couldn’t Get the Public Key");
+                        break;
+                    }
+
                     HttpResponseMessage httpResponse = await GetPublicKey();
                     pubKey = await httpResponse.Content.ReadAsStringAsync();
 
@@ -213,8 +225,6 @@ namespace Client
                         Console.WriteLine("Got Public Key");
                         break;
                     }
-
-                    Console.WriteLine("Couldn’t Get the Public Key");
 
                     break;
 
@@ -339,12 +349,14 @@ namespace Client
 
         static async Task<HttpResponseMessage> GetHttp(string path)
         {
+            PleaseWait();
             HttpResponseMessage response = await client.GetAsync(path);
             return response;
         }
 
         static async Task<string> Get(string path)
         {
+            PleaseWait();
             string responseString = "";
             HttpResponseMessage response = await client.GetAsync(path);
             responseString = await response.Content.ReadAsStringAsync();
@@ -353,12 +365,14 @@ namespace Client
 
         static async Task<HttpResponseMessage> HttpGet(string path)
         {
+            PleaseWait();
             HttpResponseMessage response = await client.GetAsync(path);
             return response;
         }
 
         static async Task<string> Delete(string path)
         {
+            PleaseWait();
             string responseString = "";
             HttpResponseMessage response = await client.DeleteAsync(path);
             responseString = await response.Content.ReadAsStringAsync();
@@ -367,12 +381,14 @@ namespace Client
 
         static async Task<HttpResponseMessage> Post(string path, string jsonBody)
         {
+            PleaseWait();
             HttpResponseMessage response = await client.PostAsJsonAsync(path, jsonBody);
             return response;
         }
 
         static async Task<string> PostJoB(string path, JsonObject job)
         {
+            PleaseWait();
             string responseString = "";
             HttpResponseMessage response = await client.PostAsJsonAsync(path, job);
             responseString = await response.Content.ReadAsStringAsync();
@@ -381,10 +397,16 @@ namespace Client
 
         static async Task<string> Put(string path, JsonObject jsonObject)
         {
+            PleaseWait();
             string responseString = "";
             HttpResponseMessage response = await client.PutAsJsonAsync(path, jsonObject);
             responseString = await response.Content.ReadAsStringAsync();
             return responseString;
+        }
+
+        static async Task PleaseWait()
+        {
+            Console.WriteLine("...Please Wait...");
         }
     }
 }

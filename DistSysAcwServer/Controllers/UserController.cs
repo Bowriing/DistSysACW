@@ -50,7 +50,7 @@ namespace DistSysAcwServer.Controllers
                 Role = role,
                 UserName = username
             };
-
+            _userDbAccess.CreateUser(user);
             return Ok(ApiKey);
         }
 
